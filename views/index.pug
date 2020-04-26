@@ -1,0 +1,10 @@
+html
+	head
+		meta(charset="utf-8")
+		title= headTitle
+	body
+		h1 Hello World
+		h1= title
+		ul
+			each v in user
+				li= v.name
