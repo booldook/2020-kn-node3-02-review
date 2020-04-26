@@ -13,6 +13,3 @@ app.use(express.urlencoded({extended: false}));
 
 /* 라우터 */
 app.use("/", express.static(	path.join(__dirname, './public')	));
-
-app.get();
-app.post();

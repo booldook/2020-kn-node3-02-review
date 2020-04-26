@@ -1,0 +1,35 @@
+<script>
+/* ...(spread operator), map(), filter() */
+
+/* 변수선언 */
+var a = 10;
+var a = 20;
+
+let b = 20;
+
+const c = [1, 2, 3];
+const d = [0, ...c, 4];
+console.log(c, d);
+
+const e = new Array();
+
+const f = [1, 2, 3, 4, 5].map(function(v){
+	return v * v;
+});
+console.log(f);
+
+const users = [
+	{id:1, name: "홍길동", age: 25, gender: "M"},
+	{id:2, name: "홍길만", age: 28, gender: "M"},
+	{id:3, name: "홍길순", age: 34, gender: "F"},
+	{id:4, name: "홍길룡", age: 42, gender: "M"},
+	{id:5, name: "홍길이", age: 21, gender: "F"},
+];
+
+const user20 = users.filter(function(v) {
+	if(v.age < 30 && v.age >= 20) return v;
+});
+console.log(user20);
+
+
+</script>

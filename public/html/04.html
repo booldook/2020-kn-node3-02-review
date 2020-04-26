@@ -1,0 +1,68 @@
+<script>
+/* Array, Object, [Set, WeakSet, Map, WeakMap] */
+
+const set = new Set();
+set.add("A");
+set.add("B");
+set.add("C");
+set.add("B");
+console.log(set);
+
+set.forEach((v) => {
+	console.log(v);
+});
+
+for(var v of set) {
+	console.log(v);	
+}
+
+const obj = {
+	a: 1,
+	b: 2,
+	c: 3,
+};
+
+for(var i in obj) {
+	console.log(i);
+}
+
+
+for(var [i, v] of set.entries()) {
+	console.log(i, v);
+}
+
+console.clear();
+
+const map = new Map();
+map.set(0, "A");
+map.set(1, "B");
+map.set("Z", "AB");
+map.set("W", () => {
+
+});
+console.log(map);
+
+for(let [i, v] of map.entries()) {
+	console.log(i, v);
+}
+
+// WeakSet과 WeakMap은 객체만 저장된다.
+const weakSet = new WeakSet();
+weakSet.add([1, 2]);
+weakSet.add({
+	a: 1,
+	b: 2
+});
+weakSet.add(() => {
+
+});
+console.log(weakSet);
+
+console.clear();
+
+const set2 = new Set();
+set2.add("A");
+set2.add("B");
+console.log(	set2.has("A")	);
+console.log(	set2.has("C")	);
+</script>

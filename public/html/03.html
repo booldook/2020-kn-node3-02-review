@@ -1,0 +1,61 @@
+<script>
+const str = "Hello, World";
+const result = str.indexOf('Hello');
+console.log(result);
+console.log(	str.startsWith("Hello")	);
+console.log(	str.endsWith("World")	);
+console.log(	str.includes("Hello")	);
+
+/* ES5 객체 */
+const Obj = (function () {
+	function Obj(_fname, _lname) {
+		this.fname = _fname;
+		this.lname = _lname;
+	}
+	Obj.prototype.fullName = function() {
+		return this.fname + " " + this.lname;
+	}
+	return Obj;
+})();
+const obj = new Obj("덕규", "임");
+console.log(obj);
+console.log(obj.fullName());
+
+/* ES6 객체 */
+class Obj2 {
+	constructor(_fname, _lname) {
+		this.fname = _fname;
+		this.lname = _lname;
+	}
+	fullName() {
+		return `당신의 이름은 ${this.lname} ${this.fname}`;
+	}
+}
+
+const obj2 = new Obj2('덕규', '임');
+console.log(obj2.fullName());
+console.clear();
+
+const name = '임덕규';
+const age = 25;
+const user = {
+	name, 
+	age,
+	fullName: function(){
+		console.log(this);
+	},
+	fullName2() {
+		console.log(this);
+	},
+	fullName3: () => {
+		console.log(this);
+	},
+};
+user.fullName();
+user.fullName2();
+user.fullName3();
+
+const {fullName, fullName2} = user;
+
+fullName();
+</script>
