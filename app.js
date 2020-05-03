@@ -20,13 +20,13 @@ app.use(express.urlencoded({extended: false}));
 /* 라우터 */
 app.use("/", express.static(	path.join(__dirname, './public')	));
 
-app.get("/pug", (req, res, next) => {
-	const user = [
-		{id: 1, name: "홍길동"},
-		{id: 2, name: "홍길순"},
-		{id: 3, name: "홍길만"},
+app.get("/", (req, res, next) => {
+	const navis = [
+		{id: 1, title: "About", link:"#"},
+		{id: 2, title: "Board", link:"#"},
+		{id: 3, title: "Gallery", link:"#"},
 	];
-	const title = "PUG로 만든 페이지 입니다."
+	const title = "index.html"
 	const headTitle = "PUG페이지"
-	res.render("index.pug", {user, title, headTitle});
+	res.render("index.pug", {navis, title, headTitle});
 });
