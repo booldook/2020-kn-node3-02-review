@@ -19,6 +19,7 @@ app.use(express.urlencoded({extended: false}));
 
 /* 라우터 */
 app.use("/", express.static(	path.join(__dirname, './public')	));
+app.use("/uploads", express.static(	path.join(__dirname, './storages')	));
 
 const navis = [
 	{id: 1, title: "About", link:"/about"},
